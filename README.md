@@ -53,6 +53,14 @@ Chrome 商店装的原版目录有完整性校验，不能直接改，所以用�
 
 每 15 本书要请求一页。短时间请求过多豆瓣会返回 403 甚至封 IP，书多的话请在扩展设置里把请求间隔调大（默认 1 秒）。
 
+## 隐私
+
+- 不收集、不上传、不共享任何数据；没有统计、广告或第三方跟踪代码
+- 全部处理都在你的浏览器本地完成，导出的 Excel 直接存到你的下载目录
+- 设置和阅读时长记录保存在 `chrome.storage.local`（只在本机，不同步云端），设置页可一键清空
+- 只有两项权限：`storage`，以及在 `book.douban.com` 个人页面运行的内容脚本
+- 完整说明见 [privacy.html](privacy.html)
+
 ## 文件说明
 
 - `manifest.json` — MV3 清单
@@ -60,6 +68,8 @@ Chrome 商店装的原版目录有完整性校验，不能直接改，所以用�
 - `xlsx.full.min.js` — [SheetJS](https://sheetjs.com/) 社区版 0.20.3，本地打包，不依赖网络
 - `modal.css` — 导出进度弹窗样式
 - `options.html` / `options.js` — 设置页（请求间隔、阅读时长记录）
+- `privacy.html` — 隐私政策（单文件，可直接托管到 GitHub Pages）
+- `PUBLISHING.md` — Chrome 网上应用店上架用的权限理由、单一用途说明、数据使用勾选答案
 - `icon*.png` — 图标（16/32/48/128，另附 512 原图）
 
 ## License

@@ -5,13 +5,13 @@
     var clearBtn = document.getElementById('clearHistory');
     var HISTORY_KEY = 'dbxHistory';
 
-    chrome.storage.sync.get({delay: '1'}, function (items) {
+    chrome.storage.local.get({delay: '1'}, function (items) {
         delay.value = String(items.delay);
         if (delay.value !== String(items.delay)) delay.value = '1';
     });
 
     delay.addEventListener('change', function () {
-        chrome.storage.sync.set({delay: delay.value}, function () {
+        chrome.storage.local.set({delay: delay.value}, function () {
             saved.textContent = '已保存';
             setTimeout(function () { saved.textContent = ''; }, 1500);
         });

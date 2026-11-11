@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>隐私政策 - 豆瓣读书导出助手 Plus</title>
+<style>
+    :root { color-scheme: light dark; }
+    body {
+        margin: 0; padding: 0;
+        font: 16px/1.75 -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+        color: #24292f; background: #fff;
+    }
+    .wrap { max-width: 760px; margin: 0 auto; padding: 3em 1.5em 5em; }
+    header { border-bottom: 1px solid #e5e7eb; padding-bottom: 1.2em; margin-bottom: 2em; }
+    h1 { font-size: 28px; margin: 0 0 .3em; letter-spacing: -.01em; }
+    .meta { color: #6b7280; font-size: 14px; }
+    h2 { font-size: 19px; margin: 2em 0 .6em; }
+    h3 { font-size: 16px; margin: 1.4em 0 .4em; }
+    p, li { margin: .5em 0; }
+    ul { padding-left: 1.4em; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; font-size: 15px; }
+    th, td { border: 1px solid #e5e7eb; padding: .55em .7em; text-align: left; vertical-align: top; }
+    th { background: #f6f8fa; font-weight: 600; }
+    code { background: #f3f4f6; padding: .1em .35em; border-radius: 4px; font-size: .92em; }
+    .callout { background: #f0fdf4; border-left: 3px solid #22a35a; padding: .8em 1em; border-radius: 0 6px 6px 0; margin: 1.2em 0; }
+    footer { margin-top: 3em; padding-top: 1.2em; border-top: 1px solid #e5e7eb; color: #6b7280; font-size: 14px; }
+    a { color: #22a35a; }
+    @media (prefers-color-scheme: dark) {
+        body { background: #0d1117; color: #c9d1d9; }
+        header, footer, th, td { border-color: #30363d; }
+        th { background: #161b22; }
+        code { background: #161b22; }
+        .meta, footer { color: #8b949e; }
+        .callout { background: #0f2a1b; }
+    }
+</style>
+</head>
+<body>
+<div class="wrap">
+    <header>
+        <h1>隐私政策</h1>
+        <div class="meta">
+            Chrome 扩展程序：<strong>豆瓣读书导出助手 Plus</strong>（Douban Book Export Plus）<br>
+            生效日期：2026 年 11 月 11 日 &nbsp;·&nbsp; 最后更新：2026 年 11 月 11 日
+        </div>
+    </header>
+
+    <div class="callout">
+        <strong>一句话总结：</strong>本扩展不收集、不上传、不共享你的任何数据。
+        它只在你自己的浏览器里，把你豆瓣读书页面上的公开信息整理成一个 Excel 文件并保存到你自己的电脑上。
+        扩展不包含任何统计、广告或第三方跟踪代码。
+    </div>
+
+    <h2>1. 我们是谁</h2>
+    <p>
+        本扩展由个人开发者（以下简称“开发者”“我们”）开发并发布。它是一个纯前端工具：
+        在豆瓣读书个人页面添加一个导出按钮，帮助你把自己在豆瓣上标记的「在读 / 读过 / 想读」书单整理成 Excel。
+    </p>
+    <p>
+        本扩展<strong>与豆瓣（douban.com）没有任何隶属、合作或授权关系</strong>，
+        “豆瓣”是其权利人的商标，本文仅用于说明扩展的适用站点。
+    </p>
+
+    <h2>2. 扩展处理哪些信息</h2>
+    <p>扩展运行时会在你的浏览器中读取以下信息，目的仅为生成你主动点击导出的 Excel 文件：</p>
+    <table>
+        <thead>
+        <tr><th>信息</th><th>来源</th><th>用途</th></tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>你豆瓣账号中的书单条目：书名、作者、出版社、出版年、定价、你的评分、短评、标签、标记日期、书籍链接与封面地址</td>
+            <td>你在当前浏览器中已登录的 book.douban.com 页面</td>
+            <td>写入你点击导出的 Excel 文件</td>
+        </tr>
+        <tr>
+            <td>你的豆瓣用户 ID</td>
+            <td>你正在访问的个人页面地址（<code>/people/&lt;用户ID&gt;/</code>）</td>
+            <td>拼接书单分页地址；作为导出文件名的一部分</td>
+        </tr>
+        <tr>
+            <td>“请求间隔”设置、阅读时长记录（每本书的 想读 / 在读 / 读过 日期）</td>
+            <td>扩展自身的设置页与导出过程</td>
+            <td>控制抓取速度；在你下次导出时计算“想读→读完”天数</td>
+        </tr>
+        </tbody>
+    </table>
+    <p>
+        扩展<strong>不会</strong>读取你的豆瓣账号密码、Cookies、登录凭据、私信、评论、订单、支付信息或你在豆瓣以外的任何网页内容。
+        它不在其他网站上运行。
+    </p>
+
+    <h2>3. 数据存储在哪里</h2>
+    <p>
+        “请求间隔”和“阅读时长记录”保存在你浏览器的本地扩展存储中（Chrome 的 <code>chrome.storage.local</code>），
+        <strong>只存在于你这台电脑上，不会同步到云端，也不会发送给我们或任何第三方</strong>。
+        你可以在扩展的设置页随时查看并一键清空这些记录，卸载扩展也会一并删除。
+    </p>
+
+    <h2>4. 数据是否会被上传或共享</h2>
+    <ul>
+        <li>扩展<strong>没有</strong>任何用于接收数据的服务器、后端接口或账号体系；</li>
+        <li>扩展<strong>不含</strong>任何统计 SDK、广告 SDK、崩溃上报或第三方跟踪代码；</li>
+        <li>扩展<strong>不会</strong>将你的数据出售、出租、转让或以任何形式提供给任何第三方；</li>
+        <li>扩展<strong>不会</strong>为广告、画像、信用评估等目的使用你的数据。</li>
+    </ul>
+    <p>
+        扩展只向 <code>book.douban.com</code> 发起请求，用于读取你自己的书单分页——也就是你在浏览器中已经打开的那个网站本身，
+        请求不经过任何中间服务器。你导出的 Excel 文件由浏览器直接生成并保存到你的下载目录。
+    </p>
+
+    <h2>5. 权限说明</h2>
+    <h3>访问 book.douban.com 上的页面（主机权限）</h3>
+    <p>
+        扩展需要在你访问的豆瓣读书个人页面上运行，以便插入“一键导出”按钮，并读取你已经能看到的那几页书单内容。
+        除此之外不会访问任何其他网站，也不会在后台读取你没有打开的页面（唯一例外是：当你点击导出时，扩展会请求同一网站下你自己书单的后续分页，
+        这与手动翻页的效果相同）。
+    </p>
+    <h3>存储（storage）</h3>
+    <p>
+        用于保存“请求间隔”设置，以及记录每本书的状态日期，以便日后算出阅读时长。全部保存在本地，不上传。
+    </p>
+
+    <h2>6. 第三方</h2>
+    <p>
+        扩展内打包了开源库 SheetJS（Apache-2.0 许可）用于在本地生成 Excel 文件，
+        该库完全在本地运行，不会发起网络请求或收集数据。
+        除此之外，扩展不集成任何第三方服务。
+    </p>
+
+    <h2>7. 儿童隐私</h2>
+    <p>本扩展不是面向儿童的产品，也不会主动收集任何人的个人身份信息。</p>
+
+    <h2>8. 你的选择</h2>
+    <ul>
+        <li>不点击导出按钮，扩展不会读取任何书单内容；</li>
+        <li>在设置页清空阅读时长记录，或直接卸载扩展，即可删除扩展保存的全部本地数据；</li>
+        <li>随时在 <code>chrome://extensions</code> 中禁用或移除本扩展。</li>
+    </ul>
+
+    <h2>9. 政策变更</h2>
+    <p>
+        如果扩展的功能或数据处理方式发生变化，我们会更新本页面并修改“最后更新”日期。
+        涉及数据收集方式的重大变更会在扩展更新说明中提示。
+    </p>
+
+    <h2>10. 联系我们</h2>
+    <p>
+        对本政策或扩展的数据处理有任何疑问，请联系：<br>
+        邮箱：<a href="mailto:wuageek@163.com">wuageek@163.com</a><br>
+        项目主页：<a href="https://github.com/iWoz/douban-export">https://github.com/iWoz/douban-export</a>
+    </p>
+
+    <footer>
+        本隐私政策适用于 Chrome 网上应用店中的扩展程序“豆瓣读书导出助手 Plus”。
+    </footer>
+</div>
+</body>
+</html>

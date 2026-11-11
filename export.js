@@ -79,7 +79,7 @@
 
     function getSettings() {
         return new Promise(function (resolve) {
-            chrome.storage.sync.get({delay: '1'}, function (items) {
+            chrome.storage.local.get({delay: '1'}, function (items) {
                 var d = Number.parseFloat(items.delay);
                 resolve({delay: isNaN(d) ? 1 : d});
             });
