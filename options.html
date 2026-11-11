@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <title>豆瓣读书导出助手 Plus - 设置</title>
+    <style>
+        body { font: 14px/1.7 -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif; color: #333; background: #f7f7f7; margin: 0; }
+        .center { max-width: 44em; margin: 2em auto; background: #fff; padding: 1.5em 2em; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+        h1 { font-size: 20px; margin-top: 0; }
+        h2 { font-size: 16px; margin: 1.5em 0 .5em; border-left: 3px solid #41ac52; padding-left: .5em; }
+        label { display: inline-block; min-width: 8em; }
+        select, button { font-size: 14px; padding: 4px 10px; }
+        .tip { color: #888; font-size: 13px; }
+        ol, ul { padding-left: 1.5em; }
+        code { background: #f1f1f1; padding: 1px 4px; border-radius: 3px; }
+        #historyInfo { margin-right: 1em; }
+    </style>
+</head>
+<body>
+<div class="center">
+    <h1>豆瓣读书导出助手 Plus</h1>
+
+    <h2>请求间隔</h2>
+    <p>
+        <label for="delay">每页请求间隔</label>
+        <select id="delay">
+            <option value="0">0 秒（不建议）</option>
+            <option value="0.5">0.5 秒</option>
+            <option value="1">1 秒（默认）</option>
+            <option value="2">2 秒</option>
+            <option value="3">3 秒</option>
+            <option value="5">5 秒</option>
+            <option value="10">10 秒</option>
+        </select>
+        <span id="saved" class="tip"></span>
+    </p>
+    <p class="tip">三个书单每 15 本书要请求一页。短时间内请求过多豆瓣会返回 403 甚至封 IP，书多的话请把间隔调大一些。</p>
+
+    <h2>阅读时长记录</h2>
+    <p><span id="historyInfo" class="tip">读取中...</span><button id="clearHistory">清空记录</button></p>
+    <p class="tip">
+        豆瓣一本书只保留「当前状态」的日期，标成读过以后，想读的日期就看不到了。
+        插件每次导出时都会把每本书 想读 / 在读 / 读过 的日期记在本地（只在你这台电脑的浏览器里），
+        之后导出就能算出「想读→读完」「在读→读完」的天数。
+        清空记录后，这些列只能从下一次导出重新开始积累。
+    </p>
+
+    <h2>使用方法</h2>
+    <ol>
+        <li>登录豆瓣，打开自己的读书页，例如 <code>https://book.douban.com/mine</code>（会跳到 <code>/people/你的ID/</code>），或者任意一个 在读 / 读过 / 想读 列表页。</li>
+        <li>在页面顶部用户名旁边点击「一键导出三个书单 (Excel)」。</li>
+        <li>等待三个书单抓取完成，点击「下载 Excel」。</li>
+    </ol>
+    <p class="tip">Excel 内含 5 个工作表：全部、在读、已读、想读、说明。字段包括 书名、作者、出版社、出版年、定价、我的评分、短评、标签、标记日期（评价时间）、想读日期、开始在读日期、读完日期、想读→读完天数、在读→读完天数、在读至今天数、豆瓣链接、封面。</p>
+</div>
+<script src="options.js"></script>
+</body>
+</html>

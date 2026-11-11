@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "豆瓣读书导出助手 Plus",
+  "description": "一键把豆瓣「在读 / 读过 / 想读」三个书单（含标记日期、我的评分、短评、标签）导出为一个 Excel 文件",
+  "version": "2.0",
+  "icons": {
+    "16": "icon16.png",
+    "32": "icon32.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://book.douban.com/people/*",
+        "https://book.douban.com/mine*"
+      ],
+      "css": ["modal.css"],
+      "js": ["xlsx.full.min.js", "export.js"]
+    }
+  ],
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  }
+}
