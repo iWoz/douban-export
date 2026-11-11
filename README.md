@@ -70,6 +70,8 @@ Chrome 商店装的原版目录有完整性校验，不能直接改，所以用�
 - `options.html` / `options.js` — 设置页（请求间隔、阅读时长记录）
 - `privacy.html` — 隐私政策（单文件，可直接托管到 GitHub Pages）
 - `PUBLISHING.md` — Chrome 网上应用店上架用的权限理由、单一用途说明、数据使用勾选答案
+- `build.sh` — 打包脚本：自动升版本号 + 生成 `dist/douban-book-export-<版本>.zip`
+- `dist/` — 已打好的上传包
 - `icon*.png` — 图标（16/32/48/128，另附 512 原图）
 
 ## License

@@ -189,18 +189,23 @@ marked date and reading duration.
 
 ## 7. 提交前自检
 
-- [ ] `manifest.json` 的 `version` 有 bump（改了代码就要升版本号，否则商店会拒绝上传同名版本）
-- [ ] 打包：在扩展目录下把 `manifest.json` 所在层级的文件打成 zip（不要把外层文件夹打进去）
+- [ ] 打包：运行 `./build.sh`，自动升版本号并生成 `dist/douban-book-export-<版本>.zip`，直接上传这个文件
 - [ ] 后台“隐私权规范”四项理由已填（主机权限、storage、单一用途、远程代码=否）
 - [ ] 联系邮箱已填且已验证
 - [ ] 数据使用勾选已保存
 - [ ] 隐私政策 URL 可公开访问
 - [ ] 商店详情页写明：**不收集用户数据 / 与豆瓣无关联**（可选但能减少误判）
 
-打包命令（Windows Git Bash，在仓库根目录执行）：
+打包命令（在仓库根目录执行）：
 
 ```bash
-cd "C:/Users/admin/Documents/douban-book-export" && rm -f ../douban-book-export.zip && zip -r ../douban-book-export.zip . -x ".git/*" ".gitignore" "README.md" "PUBLISHING.md" "privacy.html" "icon512.png"
+cd "C:/Users/admin/Documents/douban-book-export" && ./build.sh
 ```
 
-> 如果本机没有 `zip`，用资源管理器全选文件 → 右键「压缩为 ZIP」，注意不要包含 `.git` 文件夹。
+脚本会依次做三件事：
+
+1. 把 `manifest.json` 的版本号 patch +1（`2.1.1` → `2.1.2`，也可 `./build.sh 3.0.0` 指定版本，`./build.sh --no-bump` 表示不升版本）
+2. 只把扩展运行需要的 10 个文件打成 `dist/douban-book-export-<版本>.zip`（不含 README、隐私政策、`.git`）
+3. 校验清单版本与图标文件，失败会直接报错退出
+
+打好的 zip 也提交在仓库的 `dist/` 目录里，方便回滚和对照。
