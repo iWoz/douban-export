@@ -2,7 +2,7 @@
 <html lang="zh-Hans">
 <head>
     <meta charset="UTF-8">
-    <title>豆瓣读书导出助手 Plus - 设置</title>
+    <title>豆瓣导出助手 Plus - 设置</title>
     <style>
         body { font: 14px/1.7 -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif; color: #333; background: #f7f7f7; margin: 0; }
         .center { max-width: 44em; margin: 2em auto; background: #fff; padding: 1.5em 2em; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
@@ -13,12 +13,12 @@
         .tip { color: #888; font-size: 13px; }
         ol, ul { padding-left: 1.5em; }
         code { background: #f1f1f1; padding: 1px 4px; border-radius: 3px; }
-        #historyInfo { margin-right: 1em; }
+        #historyInfo { white-space: pre-line; }
     </style>
 </head>
 <body>
 <div class="center">
-    <h1>豆瓣读书导出助手 Plus</h1>
+    <h1>豆瓣导出助手 Plus</h1>
 
     <h2>请求间隔</h2>
     <p>
@@ -34,24 +34,25 @@
         </select>
         <span id="saved" class="tip"></span>
     </p>
-    <p class="tip">三个书单每 15 本书要请求一页。短时间内请求过多豆瓣会返回 403 甚至封 IP，书多的话请把间隔调大一些。</p>
+    <p class="tip">导出会逐页读取当前站点的三个状态列表。短时间内请求过多可能被豆瓣限制，条目多时请把间隔调大一些。</p>
 
-    <h2>阅读时长记录</h2>
-    <p><span id="historyInfo" class="tip">读取中...</span><button id="clearHistory">清空记录</button></p>
+    <h2>状态日期与时长记录</h2>
+    <p id="historyInfo" class="tip">读取中...</p>
+    <p><button id="clearHistory">清空所有记录</button></p>
     <p class="tip">
-        豆瓣一本书只保留「当前状态」的日期，标成读过以后，想读的日期就看不到了。
-        插件每次导出时都会把每本书 想读 / 在读 / 读过 的日期记在本地（只在你这台电脑的浏览器里），
-        之后导出就能算出「想读→读完」「在读→读完」的天数。
-        清空记录后，这些列只能从下一次导出重新开始积累。
+        豆瓣列表显示条目的「当前状态」日期，改变状态后，以前的日期可能无法再从列表中读取。
+        扩展每次导出时把书籍、电影或音乐的状态日期记在本机浏览器中，按类型和豆瓣用户 ID 分开保存。
+        以后导出可用已记录的日期计算从「想读 / 想看 / 想听」或「在读 / 在看 / 在听」到完成的天数。
+        未归属账号的旧版书籍记录会保留，但不自动用于新导出。清空后，所有类型的记录都从下次导出重新积累，请求间隔设置会保留。
     </p>
 
     <h2>使用方法</h2>
     <ol>
-        <li>登录豆瓣，打开自己的读书页，例如 <code>https://book.douban.com/mine</code>（会跳到 <code>/people/你的ID/</code>），或者任意一个 在读 / 读过 / 想读 列表页。</li>
-        <li>在页面顶部用户名旁边点击「一键导出三个书单 (Excel)」。</li>
-        <li>等待三个书单抓取完成，点击「下载 Excel」。</li>
+        <li>登录豆瓣，打开「我读」「我看」或「我听」：<code>https://book.douban.com/mine</code>、<code>https://movie.douban.com/mine</code> 或 <code>https://music.douban.com/mine</code>，也可打开对应的个人主页或状态列表页。</li>
+        <li>在「读书主页」「电影主页」「音乐主页」导航旁点击「导出书单 (Excel)」「导出片单 (Excel)」或「导出音乐 (Excel)」。没有该导航的列表页会在标题旁显示按钮。</li>
+        <li>等待当前站点的三个状态列表抓取完成，点击「下载 Excel」。</li>
     </ol>
-    <p class="tip">Excel 内含 5 个工作表：全部、在读、已读、想读、说明。字段包括 书名、作者、出版社、出版年、定价、我的评分、短评、标签、标记日期（评价时间）、想读日期、开始在读日期、读完日期、想读→读完天数、在读→读完天数、在读至今天数、豆瓣链接、封面。</p>
+    <p class="tip">每个 Excel 内含 5 个工作表：全部、当前站点的三个状态、说明。读书导出书名、作者、出版社、出版年、定价和出版信息；电影导出片名和影片信息；音乐导出专辑名和音乐信息。三类均包含评分、短评、标签、标记日期、各状态日期、对应时长、豆瓣链接和封面地址。</p>
 </div>
 <script src="options.js"></script>
 </body>
