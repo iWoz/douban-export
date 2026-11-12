@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "豆瓣导出助手 Plus",
   "description": "在我读、我看、我听主页一键导出书籍、电影、音乐的三个状态列表，含评分、短评、标签、标记日期和时长，保存为 Excel",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "icons": {
     "16": "icon16.png",
     "32": "icon32.png",

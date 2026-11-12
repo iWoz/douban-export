@@ -81,13 +81,16 @@ async function exportedWorkbook(h) {
 }
 
 for (const media of Object.keys(names)) {
-    test(`${media}: /mine resolves the profile account and inserts one button next to the home tab`, t => {
+    test(`${media}: /mine resolves the profile account and appends one button to the title`, t => {
         const h = harness(media);
         t.after(() => h.dom.window.close());
         assert.equal(h.api?.uid, 'alice');
         const button = h.window.document.querySelector('.dbx-export-btn');
         assert.equal(button?.textContent, names[media].button);
-        assert.equal(button.closest('li').previousElementSibling.textContent, names[media].home);
+        const heading = h.window.document.querySelector('#db-usr-profile h1');
+        assert.equal(heading.lastElementChild, button);
+        assert.equal(button.previousSibling.textContent.trim(), `Alice的${names[media].home}`);
+        assert.equal(h.window.document.querySelector('.nav-list .dbx-export-btn'), null);
         h.api.insertButton();
         assert.equal(h.window.document.querySelectorAll('.dbx-export-btn').length, 1);
     });

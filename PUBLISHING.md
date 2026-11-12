@@ -6,7 +6,7 @@
 
 - 名称：豆瓣导出助手 Plus。
 - 用途：将豆瓣读书、电影或音乐个人页面上的三个状态列表导出为 Excel。
-- 入口：在「读书主页 / 电影主页 / 音乐主页」导航旁添加导出按钮；无该导航的列表页在标题旁显示。
+- 入口：在读书、电影、音乐个人主页及状态列表页的页面标题后添加醒目的实心导出按钮。
 - 每次导出当前站点，生成「全部 + 三个状态 + 说明」五个工作表。
 - 仅在点击导出后请求列表分页；关闭进度窗口会中止导出。
 - SheetJS 随扩展打包，不加载远程脚本。
@@ -36,7 +36,7 @@
 ```text
 本扩展在豆瓣读书、电影和音乐个人页面运行：book.douban.com、movie.douban.com、music.douban.com 的 /people/* 和 /mine* 路径。
 
-用途是在个人主页导航旁添加导出按钮，并在用户点击后读取当前站点的三个状态列表，生成 Excel 文件。读书导出在读、读过、想读；电影导出在看、看过、想看；音乐导出在听、听过、想听。
+用途是在个人主页及状态列表页的页面标题后添加导出按钮，并在用户点击后读取当前站点的三个状态列表，生成 Excel 文件。读书导出在读、读过、想读；电影导出在看、看过、想看；音乐导出在听、听过、想听。
 
 为什么需要这些访问范围：
 1. 扩展需要在这三个站点的个人页面插入按钮并读取列表条目，否则无法完成导出。
@@ -51,7 +51,7 @@
 ```text
 This extension runs on Douban Books, Movies and Music profile pages: /people/* and /mine* paths on book.douban.com, movie.douban.com and music.douban.com.
 
-It adds an export button beside the profile navigation. Only after the user clicks export does it read the three status lists on the current site and generate an Excel file: reading/read/wish to read, watching/watched/wish to watch, or listening/listened/wish to listen.
+It adds a prominent, solid-color export button after the page title on profile home pages and status list pages. Only after the user clicks export does it read the three status lists on the current site and generate an Excel file: reading/read/wish to read, watching/watched/wish to watch, or listening/listened/wish to listen.
 
 Why this access is needed:
 1. The extension must insert the button and read list entries on these profile pages to perform its export function.
@@ -124,7 +124,7 @@ Export the three status lists on the current Douban Books, Movies or Music profi
 在仓库根目录执行：
 
 ```bash
-./build.sh 2.2.0
+./build.sh 2.2.1
 ```
 
 后续可运行 `./build.sh` 自动提升 patch 版本，或运行 `./build.sh --no-bump` 使用当前版本重新打包。

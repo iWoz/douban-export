@@ -79,26 +79,25 @@
     font-size: 12px;
     margin-top: 0.5rem;
 }
-.dbx-export-btn {
-    margin-left: 8px;
-    padding: 2px 10px;
-    font-size: 13px;
-    vertical-align: middle;
-    cursor: pointer;
-}
-.dbx-export-nav .dbx-export-btn {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    background: transparent;
-    color: #3377aa;
-    font: inherit;
-    line-height: inherit;
-    vertical-align: baseline;
-    white-space: nowrap;
-}
-.dbx-export-nav .dbx-export-btn:hover,
-.dbx-export-nav .dbx-export-btn:focus-visible {
-    background: #3377aa;
+#db-usr-profile h1 .dbx-export-btn {
+    display: inline-block;
+    margin-left: 14px;
+    padding: 7px 16px;
+    border: 1px solid #248238;
+    border-radius: 5px;
+    background: #27883b;
     color: #fff;
+    font: 600 14px/1.4 -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif;
+    vertical-align: middle;
+    white-space: nowrap;
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
+}
+#db-usr-profile h1 .dbx-export-btn:hover {
+    background: #206f30;
+    border-color: #206f30;
+}
+#db-usr-profile h1 .dbx-export-btn:focus-visible {
+    outline: 3px solid #97cba2;
+    outline-offset: 3px;
 }

@@ -71,22 +71,15 @@
     function insertButton() {
         var profile = document.querySelector('#db-usr-profile');
         if (!profile || profile.querySelector('.dbx-export-btn')) return;
+        var h1 = profile.querySelector('h1');
+        if (!h1) return;
         var btn = document.createElement('button');
         btn.type = 'button';
         btn.className = 'dbx-export-btn';
         btn.textContent = '导出' + config.list + ' (Excel)';
         btn.title = '一键导出' + LISTS.map(function (l) { return l.name; }).join(' / ');
         btn.addEventListener('click', startExport);
-        var nav = profile.querySelector('.info > ul');
-        if (nav) {
-            var entry = document.createElement('li');
-            entry.className = 'dbx-export-nav';
-            entry.appendChild(btn);
-            nav.insertBefore(entry, nav.firstElementChild ? nav.firstElementChild.nextSibling : null);
-        } else {
-            var h1 = profile.querySelector('h1');
-            if (h1) h1.appendChild(btn);
-        }
+        h1.appendChild(btn);
     }
     insertButton();
 
